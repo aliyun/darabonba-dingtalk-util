@@ -1,0 +1,11 @@
+/**
+ * This is for DingUtil
+ */
+
+static function getTimestamp(): string;
+
+static function hasError(res: map[string]any): boolean;
+
+static function computeSignature(accessSecret: string, canonicalString: string): string;
+
+static function getCanonicalStringForIsv(timestamp: string, suiteTicket: string): string;

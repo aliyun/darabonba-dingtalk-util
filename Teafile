@@ -1,0 +1,28 @@
+{
+	"scope": "alibabacloud",
+	"name": "DingUtil",
+	"version": "0.0.1",
+	"main": "./main.tea",
+	"releases": {
+		"ts": "@alicloud/ding-util:^1.0.0",
+		"go": "github.com/alibabacloud-go/ding-util/client:v0.0.1",
+		"csharp": "AlibabaCloud.Ding.Util:1.0.0",
+		"java": "com.aliyun:ding-util:0.0.1",
+		"php": "alibabacloud/ding-util:^0.0.1",
+		"python": "alibabacloud_ding_util:0.0.1"
+	},
+	"java": {
+		"package": "com.aliyun.ding-util"
+	},
+	"csharp": {
+		"namespace": "AlibabaCloud.Ding.Util"
+	},
+	"php": {
+		"package": "AlibabaCloud.Ding.Util",
+		"clientName": "Url"
+	},
+	"python": {
+		"package": "alibabacloud_ding_util",
+		"clientName": "client"
+	}
+}
