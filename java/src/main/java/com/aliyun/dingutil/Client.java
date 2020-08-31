@@ -46,10 +46,10 @@ public class Client {
     }
 
     public static String getCanonicalStringForIsv(String timestamp, String suiteTicket) throws Exception {
-        String result = timestamp;
+        StringBuilder stringBuilder = new StringBuilder(timestamp);
         if (suiteTicket != null) {
-            result = "\n" + suiteTicket;
+            stringBuilder.append("\n").append(suiteTicket);
         }
-        return result;
+        return stringBuilder.toString();
     }
 }
