@@ -55,7 +55,7 @@ namespace AlibabaCloud.Ding.Util
             string result = timestamp;
             if(suiteTicket != null)
             {
-                result = "\n" + suiteTicket;
+                result += "\n" + suiteTicket;
             }
 
             return result;
