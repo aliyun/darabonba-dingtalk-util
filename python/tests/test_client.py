@@ -34,7 +34,7 @@ class TestClient(unittest.TestCase):
 
     def test_get_canonical_string_for_isv(self):
         res = Client.get_canonical_string_for_isv('10000', 'suite_ticket')
-        self.assertEqual('\nsuite_ticket', res)
+        self.assertEqual('10000\nsuite_ticket', res)
 
         res = Client.get_canonical_string_for_isv('10000', None)
         self.assertEqual('10000', res)
