@@ -9,7 +9,7 @@
 		"csharp": "AlibabaCloud.Ding.Util:1.0.1",
 		"java": "com.aliyun:ding-util:0.0.1",
 		"php": "alibabacloud/ding-util:^0.0.1",
-		"python": "alibabacloud_ding_util:0.0.1"
+		"python": "alibabacloud_ding_util:0.0.2"
 	},
 	"java": {
 		"package": "com.aliyun.ding-util"
