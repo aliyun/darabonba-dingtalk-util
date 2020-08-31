@@ -46,10 +46,10 @@ func ComputeSignature(accessSecret *string, canonicalString *string) (_result *s
 }
 
 func GetCanonicalStringForIsv(timestamp *string, suiteTicket *string) (_result *string) {
-	_result = timestamp
+	res := tea.StringValue(timestamp)
 	if suiteTicket != nil {
-		_result = tea.String("\n" + tea.StringValue(suiteTicket))
+		res += "\n" + tea.StringValue(suiteTicket)
 	}
 
-	return _result
+	return tea.String(res)
 }

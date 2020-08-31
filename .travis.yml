@@ -1,0 +1,83 @@
+jobs:
+  include:
+    - language: go
+      go: 1.12.x
+      if: branch = master
+      install:
+        - export GO111MODULE=on
+      script:
+        - cd golang
+        - go mod tidy
+        - go test -race -coverprofile=coverage.txt -covermode=atomic ./client/...
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF go
+    - language: go
+      go: 1.13.x
+      if: branch = master
+      install:
+        - export GO111MODULE=on
+      script:
+        - cd golang
+        - go mod tidy
+        - go test -race -coverprofile=coverage.txt -covermode=atomic ./client/...
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF go
+    - language: go
+      go: 1.14.x
+      if: branch = master
+      install:
+        - export GO111MODULE=on
+      script:
+        - cd golang
+        - go mod tidy
+        - go test -race -coverprofile=coverage.txt -covermode=atomic ./client/...
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF go
+    - language: go
+      go: 1.15.x
+      if: branch = master
+      install:
+        - export GO111MODULE=on
+      script:
+        - cd golang
+        - go mod tidy
+        - go test -race -coverprofile=coverage.txt -covermode=atomic ./client/...
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF go            
+    - language: csharp
+      mono: none
+      dist: xenial
+      branches:
+        only:
+          - master
+      before_install:
+        - wget https://download.visualstudio.microsoft.com/download/pr/42f39f2f-3f24-4340-8c57-0a3133620c21/0a353696275b00cbddc9f60069867cfc/dotnet-sdk-2.2.110-linux-x64.tar.gz
+        - mkdir -p ~/dotnet/ && tar zxf dotnet-sdk-2.2.110-linux-x64.tar.gz -C ~/dotnet/
+        - sudo ln -sf ~/dotnet/dotnet /usr/bin/dotnet
+        - dotnet --info
+      install:
+        - cd csharp/tests
+        - dotnet tool install --global altcover.visualizer
+        - dotnet restore
+        - dotnet build
+        - cd ../
+      script:
+        - dotnet test tests/ /p:AltCover=true
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF dingtalk-util-csharp
+    - language: python
+      python:
+        - "3.4"
+        - "3.5"
+        - "3.6"
+        - "3.7"
+        - "3.8"
+      if: branch = master
+      install:
+        - pip install alibabacloud-tea
+        - pip install coverage
+      script:
+        - cd python
+        - coverage run --source="alibabacloud_ding_util" -m pytest tests/test_*
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF python
