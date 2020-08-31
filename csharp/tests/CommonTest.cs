@@ -43,7 +43,7 @@ namespace tests
         [Fact]
         public void TestGetCanonicalStringForIsv()
         {
-            Assert.Equal("\nsuite_ticket", Common.GetCanonicalStringForIsv("10000", "suite_ticket"));
+            Assert.Equal("10000\nsuite_ticket", Common.GetCanonicalStringForIsv("10000", "suite_ticket"));
 
             Assert.Equal("10000", Common.GetCanonicalStringForIsv("10000", null));
         }
