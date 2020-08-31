@@ -43,7 +43,7 @@ jobs:
         - go mod tidy
         - go test -race -coverprofile=coverage.txt -covermode=atomic ./client/...
       after_success:
-        - bash <(curl -s https://codecov.io/bash) -cF go            
+        - bash <(curl -s https://codecov.io/bash) -cF go
     - language: csharp
       mono: none
       dist: xenial
@@ -66,12 +66,51 @@ jobs:
       after_success:
         - bash <(curl -s https://codecov.io/bash) -cF dingtalk-util-csharp
     - language: python
-      python:
-        - "3.4"
-        - "3.5"
-        - "3.6"
-        - "3.7"
-        - "3.8"
+      python: "3.4"
+      if: branch = master
+      install:
+        - pip install alibabacloud-tea
+        - pip install coverage
+      script:
+        - cd python
+        - coverage run --source="alibabacloud_ding_util" -m pytest tests/test_*
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF python
+    - language: python
+      python: "3.5"
+      if: branch = master
+      install:
+        - pip install alibabacloud-tea
+        - pip install coverage
+      script:
+        - cd python
+        - coverage run --source="alibabacloud_ding_util" -m pytest tests/test_*
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF python
+    - language: python
+      python: "3.6"
+      if: branch = master
+      install:
+        - pip install alibabacloud-tea
+        - pip install coverage
+      script:
+        - cd python
+        - coverage run --source="alibabacloud_ding_util" -m pytest tests/test_*
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF python
+    - language: python
+      python: "3.7"
+      if: branch = master
+      install:
+        - pip install alibabacloud-tea
+        - pip install coverage
+      script:
+        - cd python
+        - coverage run --source="alibabacloud_ding_util" -m pytest tests/test_*
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF python
+    - language: python
+      python: "3.8"
       if: branch = master
       install:
         - pip install alibabacloud-tea
