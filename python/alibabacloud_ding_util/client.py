@@ -35,6 +35,6 @@ class Client:
     @staticmethod
     def get_canonical_string_for_isv(timestamp, suite_ticket):
         if suite_ticket is not None:
-            return '\n%s' % suite_ticket
+            return '%s\n%s' % (timestamp, suite_ticket)
         else:
             return timestamp
