@@ -7,7 +7,7 @@
 		"ts": "@alicloud/ding-util:^1.0.0",
 		"go": "github.com/alibabacloud-go/ding-util/client:v0.0.2",
 		"csharp": "AlibabaCloud.Ding.Util:1.0.1",
-		"java": "com.aliyun:ding-util:0.0.1",
+		"java": "com.aliyun:ding-util:0.0.2",
 		"php": "alibabacloud/ding-util:^0.0.1",
 		"python": "alibabacloud_ding_util:0.0.2"
 	},
