@@ -120,3 +120,12 @@ jobs:
         - coverage run --source="alibabacloud_ding_util" -m pytest tests/test_*
       after_success:
         - bash <(curl -s https://codecov.io/bash) -cF python
+    - language: node_js
+      node_js: 12
+      if: branch = master
+      script:
+        - cd ts
+        - npm install
+        - npm run test-cov
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -cF node_js
