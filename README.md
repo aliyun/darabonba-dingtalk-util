@@ -4,6 +4,9 @@ English | [简体中文](README-CN.md)
 
 ## Alibaba Cloud Darabonba Dingtalk Util
 
+[![Travis Build Status](https://travis-ci.org/aliyun/darabonba-dingtalk-util.svg?branch=master)](https://travis-ci.org/aliyun/darabonba-dingtalk-util)
+[![codecov](https://codecov.io/gh/aliyun/darabonba-dingtalk-util/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/darabonba-dingtalk-util)
+
 ## Issues
 
 [Opening an Issue](https://github.com/aliyun/darabonba-dingtalk-util/issues/new), Issues not conforming to the guidelines may be closed immediately.
